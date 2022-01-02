@@ -1,0 +1,6 @@
+# python bits
+.idea/
+.venv/
+
+# data duh
+data/
