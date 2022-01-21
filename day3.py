@@ -51,17 +51,6 @@ def calculate_power_rate(input_file):
     return gamma_rate * epsilon_rate
 
 
-# def _oxygen_generator_filter(datum_length):
-#     def mask_producer(digit_position, common_digit):
-#         return common_digit << (datum_length - digit_position)
-#     return mask_producer
-#
-#
-# def _oxygen_scrubber_mask(datum_length):
-#     def mask_producer(digit_position, common_digit):
-#         return common_digit << (datum_length - digit_position)
-#     return mask_producer
-
 def _oxygen_generator_filter(digit_position, common_digit):
     def filter(datum):
         return datum[digit_position] == common_digit
