@@ -83,7 +83,6 @@ def run(input_file: str) -> None:
     print(f"total fuel expense - {fuel_expense}")
 
 
-
 if __name__ == '__main__':
     args = parse_args()
 
