@@ -106,11 +106,6 @@ def fold(image: Image, instruction):
         post_fold_height = image.height
         fold_y = image.height
 
-        # post_fold_markings = [
-        #     (fold_x, y, '|')
-        #     for y in range(image.height + 1)
-        # ]
-
     elif direction == 'y':
         post_fold_width = image.width
         fold_x = image.width
@@ -120,11 +115,6 @@ def fold(image: Image, instruction):
             image.height - fold_line,
         )
         fold_y = fold_line
-
-        # post_fold_markings = [
-        #     (x, fold_y, '-')
-        #     for x in range(image.width + 1)
-        # ]
 
     else:
         raise RuntimeError('unexpected direction')
@@ -150,30 +140,12 @@ def fold(image: Image, instruction):
     if not post_fold_image.get(post_fold_width, post_fold_height):
         post_fold_image.add_dot(post_fold_width - 1, post_fold_height - 1, '.')
 
-    # for marking in post_fold_markings:
-    #     x, y, value = marking
-    #     post_fold_image.add_dot(x, y, value)
-
     return post_fold_image
 
 
 def run(input_file: str) -> None:
     image, instructions = _read_data(input_file)
     image.print()
-
-    # print(f'performing instruction - {instructions[0]}')
-    # image = fold(image, instructions[0])
-    # image.print()
-    #
-    # dot_count = [
-    #     (x, y)
-    #     for (x, y) in image.read()
-    #     if image.get(x, y) == '#'
-    # ]
-    #
-    # print(
-    #     len(dot_count)
-    # )
 
     for instruction in instructions:
         print(f'performing instruction - {instruction}')
